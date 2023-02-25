@@ -14,3 +14,11 @@ I utilized the following frameworks:
 - **Bootstrap**: Implimentation of the front-end framework
 - **Thymeleaf**: HTML utilization
 
+## How To Run:
+
+1. Run the main **CovidTrackerApplication.java** program
+2. Open your browser
+3. Type in your browser: **localhost:8080**
+4. The COVID-19 tracker should open in your browser
+
+
