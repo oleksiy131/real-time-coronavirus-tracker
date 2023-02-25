@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Coronavirus Tracker Application</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+
+<style>
+    .card-body{
+        background-color: brown;
+    }
+</style>
+
+<body style="background-color: floralwhite">
+
+<div align="center">
+<h1>Coronavirus Confirmed-Global Cases Tracker</h1>
+</div>
+<p align="center">
+    This application lists all the confirmed coronavirus cases across the globe, using publicly available information provided by the John Hopkins University.
+</p>
+
+<div class="card text-center">
+    <div class="card-header">
+        COVID-19
+    </div>
+    <div class="card-body">
+        <h5 class="card-title" th:text="${totalCases}"></h5>
+        <p class="card-text">Total Cases</p>
+        <a href="https://www.google.com/search?kgmid=/g/11j2cc_qll" class="btn btn-primary">Get Informed on COVID-19</a>
+    </div>
+    <div class="card-footer text-muted">
+        Updates daily
+    </div>
+</div>
+<p>
+    &nbsp
+</p>
+<table align="center" border="solid">
+    <tr>
+        <th>State</th>
+        <th>Country</th>
+        <th>Total Cases Reported</th>
+    </tr>
+    <tr th:each="locationStat : ${locationStats}">
+        <td th:text="${locationStat.state}"></td>
+        <td th:text="${locationStat.country}"></td>
+        <td th:text="${locationStat.latestTotalCases}">0</td>
+    </tr>
+</table>
+
+</body>
+
+</html>
